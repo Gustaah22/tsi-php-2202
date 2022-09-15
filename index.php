@@ -91,3 +91,7 @@ switch($i){
     default:
         echo "Numero invalido";
 }
+
+//Vetores
+
+// $diasemana = [0 => 'domingo'; 1 => 'segunda';]

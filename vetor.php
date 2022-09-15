@@ -36,14 +36,23 @@ echo"
         <th>Nome</th>
     </tr>";
 
-for( $i = 0 ; $i < count($aluno) ; $i++){
+// for( $i = 0 ; $i < count($aluno) ; $i++){
+//     echo "
+//         <tr>
+//             <td>{$aluno[$i]["matricula"]}</td>
+//             <td>{$aluno[$i]["nome"]}</td>
+//             <td>{$aluno[$i]["semestre"]}</td>
+//         </tr>";
+// }
+
+foreach($aluno as $index => $valor){
     echo "
-        <tr>
-            <td>{$aluno[$i]["matricula"]}</td>
-            <td>{$aluno[$i]["nome"]}</td>
-            <td>{$aluno[$i]["semestre"]}</td>
-        </tr>";
-}
+         <tr>
+             <td>{$valor["matricula"]}</td>
+             <td>{$valor["nome"]}</td>
+             <td>{$valor["semestre"]}</td>
+         </tr>";
+};
 
 echo '</table>';
 
