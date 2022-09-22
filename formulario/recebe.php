@@ -9,7 +9,11 @@
     //echo "Você tem {$_POST['idadeUsuario']} anos, CPF: {$_POST['cpfUsuario']}<br>";
     //echo "E o periodo escolhido foi o {$_POST['periodoUsuario']}";
 
+    //$_SERVER possui muitas variáveos de ambiente que podem ser
+    //muito importantes para você em algum momento, ex: IP do
+    //requisitante (exemplo 4 do 'alunos.csv')
+
 
     $arquivo = fopen('alunos.csv', 'a');//abro o arquivo para append
-    fwrite($arquivo, "$nome; $idade; $CPF; $periodo\r\n");
+    fwrite($arquivo, "$nome; $idade; $CPF; $periodo; {$_SERVER['REMOTE_ADDR']}\r\n");
     fclose($arquivo);
