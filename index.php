@@ -49,6 +49,8 @@ $i = 10;
 
 echo "<br><br>";
 
+$i = 4; 
+
 if ($i == 0) {
     echo "i é igual a 0 <br>";
 } elseif ($i == 1) {
