@@ -39,9 +39,6 @@ if($objConsulta->execute()){
 */
 /*
 A função $objConsulta->bindParam() substitui os rótulos (ex.: ":nome") pelos dados inseguros
-GEOVANNA EU SEI QUE VOCÊ ESTÁ COPIANDO DE MIM, 
-RESPONDEU A CHAMADA E FOI EMBORA E AGORA 
-ESTÁ SE APROVEITANDO DE TUDO QUE TENHO FEITO PARA MEU APRENDIZADO!!!!!!
 */
 
 /*
@@ -49,3 +46,11 @@ $objConsulta->execute();
 
 Executando a consulta no SGDB
 */
+
+if($objConsulta->execute()){
+    $gravou = true;
+}else{
+    $gravou = false;
+}
+
+include 'index.php';
