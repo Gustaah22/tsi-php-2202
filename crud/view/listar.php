@@ -9,18 +9,16 @@
 </head>
 <body>
     <div class="container">
-
-
         <a href="formIncluir.php"><button class='btn'>Novo Aluno</button></a>
         <?php
         if(isset($gravou)){
             if(!$gravou){
-                echo '<div class="alert alert-sucsses">
+                echo '<div class="alert alert-danger">
                 Errou ao tentar gravar o Aluno!
                 </div>';
             }
         }else{
-            echo   '<div class="alert alert-sucsses">
+            echo   '<div class="alert alert-success">
             Aluno gravado com sucesso!
             </div>';
         }

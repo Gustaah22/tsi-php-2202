@@ -20,11 +20,15 @@ $objConsulta = $bd->prepare('  INSERT INTO alunos
 $objConsulta->bindValue(':nome', $nome);
 $objConsulta->bindValue(':turno', $turno);
 $objConsulta->bindValue(':inicio', $inicio);
+
+//Executa a inserção
 if($objConsulta->execute()){
-    echo "Gravou com sucesso";
+    $gravou = true;
 }else{
-    echo "Erro ao gravar no Banco";
+    $gravou = false;
 }
+
+include 'index.php';
 /*
     A função $bd->prepare está retornando o objStmt(Statement), uma 
     variavel que consegue juntar todos os dados do usario com uma consulta
@@ -47,10 +51,3 @@ $objConsulta->execute();
 Executando a consulta no SGDB
 */
 
-if($objConsulta->execute()){
-    $gravou = true;
-}else{
-    $gravou = false;
-}
-
-include 'index.php';
