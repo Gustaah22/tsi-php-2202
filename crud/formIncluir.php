@@ -7,6 +7,7 @@
     <title>Formulario de cadastro</title>
 </head>
 <body>
+<div class='container'>
     <form action="gravar.php" method ="post">
         <label for="nome">Nome: </label>
         <input type="text" name="nome" id="nome">
@@ -22,7 +23,8 @@
         <label for="inicio"></label>
         <input type="date" name="inicio" id="inicio">
         <br><br>
-        <input type="submit" value="Gravar">
+        <input class="btn" type="submit" value="Gravar">
     </form>
+</div>
 </body>
 </html>
