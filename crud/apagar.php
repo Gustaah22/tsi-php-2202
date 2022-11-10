@@ -3,6 +3,7 @@
 require_once '../bancoDeDados/conecta.php';
 //Apenas para ficar mais fácil de trabalhar com o dado enviado pelo usuário
 $id = $_POST['id'] ?? 0;
+// ?? quando não existe $_POST['id']
 //Evito que seja recebido em $id qualquer coisa que seja diferente de números (dígitos)
 $id = preg_replace('/\D/','', $id);
 
