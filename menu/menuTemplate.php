@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +8,10 @@
 </head>
 <body>
     <div>
-        <ul>
+        <ul style = "list-style: none; display: flex;">
             <li>Menu Principal</li>
-            <li><a href="/tsi-php-2202/logout">Sair</a></li>
+            <li> <a href="/tsi-php-2022/crud" style = 'text-decoration:none;'>Alunos</a> </li>
+            <li> <a href="/tsi-php-2022/logout" style = 'text-decoration:none;'>Sair</a> </li>
         </ul>
     </div>
 </body>

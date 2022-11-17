@@ -1,34 +1,30 @@
 <?php
-//Buscamos o código que conecta no SBBD
-require_once '../bancoDeDados/conecta.php';
-//Na linha 3 estamos trazendo o código de ../bancoDeDados/conecta.php para este código
-//include_once(); não gera erro fatal se não existir o arquivo
+    //Busca codigo que conecta no banco
+    require_once "../bancoDeDados/conecta.php";
+    require_once "../bancoDeDados/login/autenticacao.php";
+    
+    //Recebe os dados via post e guarda em variáveis
+    $nome = $_POST['nome'];
+    $turno = $_POST['turno'];
+    $inicio = $_POST['inicio'];
+    
+    // Prepara a inserção dos dados recebidos no formulário 
+    $consulta = $bd->prepare("INSERT INTO alunos(nome, turno, inicio) VALUES(:nome, :turno, :inicio)");
 
+    //Substitui a os valores do prepare pelas váriaveis
+    $consulta->bindValue(':nome', $nome);
+    $consulta->bindValue(':turno', $turno);
+    $consulta->bindValue(':inicio', $inicio);
 
-//Dados provenientes do formulário HTML
-$nome = $_POST["nome"];
-$turno = $_POST["turno"];
-$inicio = $_POST["inicio"];
+    //Executa a inserção
+    if($consulta->execute()){
+        $gravou = true;
+    }
+    else{
+        $gravou = false;
+    }
 
-$objConsulta = $bd->prepare('  INSERT INTO alunos 
-                    (nome, turno, inicio) 
-                VALUES
-                    (:nome, :turno, :inicio)');
-
-
-
-$objConsulta->bindValue(':nome', $nome);
-$objConsulta->bindValue(':turno', $turno);
-$objConsulta->bindValue(':inicio', $inicio);
-
-//Executa a inserção
-if($objConsulta->execute()){
-    $gravou = true;
-}else{
-    $gravou = false;
-}
-
-include 'index.php';
+    include 'index.php';
 /*
     A função $bd->prepare está retornando o objStmt(Statement), uma 
     variavel que consegue juntar todos os dados do usario com uma consulta
